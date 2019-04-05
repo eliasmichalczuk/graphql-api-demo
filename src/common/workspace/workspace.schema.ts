@@ -6,7 +6,7 @@ import Workspace from './workspace.model';
 export const workspaceTypeDefs = `
 
   type Workspace {
-    id: ID!
+    id: ID
     name: String!
     rating: Int
   }
@@ -55,6 +55,10 @@ export const workspaceResolvers: any = {
     async addWorkspace(_, { input }) {
       const workspace: any = await Workspace.create(input);
       return workspace.toGraph();
+    },
+    async deleteWorkspace(_, { id }) {
+      await Workspace.deleteOne(id);
+      return id;
     },
   },
 };
