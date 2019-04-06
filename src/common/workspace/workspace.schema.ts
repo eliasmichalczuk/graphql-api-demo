@@ -20,15 +20,14 @@ export const workspaceTypeDefs = `
     limit: Int
   }
 
-  # Extending the root Query type.
   extend type Query {
     workspaces(filter: WorkspaceFilterInput): [Workspace]
     workspace(id: String!): Workspace
   }
 
-  # Extending the root Mutation type.
   extend type Mutation {
     addWorkspace(input: WorkspaceInput!): Workspace
+    deleteWorkspace(input: ID!): ID
   }
 
 `;

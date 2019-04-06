@@ -1,0 +1,23 @@
+bookDB
+  editora
+    nome
+    cnpj
+    endereco
+      rua
+      cidade
+      bairro
+      numero
+    autores
+  autor
+    nome
+    sobrenome
+    data nascimento
+    livros
+  livro
+    nome
+    numero de serie
+    preço sugerido
+    data de publicacao
+    edicao
+    idioma
+    tema
