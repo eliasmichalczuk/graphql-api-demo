@@ -12,23 +12,35 @@ import {
 import { petResolvers, petTypeDefs } from './common/pet/pet.schema';
 import User from './common/user/user.model';
 import config from './config';
+import {
+  livroTypeDefs,
+  livroResolvers,
+} from './bancoDeLivros/livro/livro.schema';
 
 /**
  * Connect to the mongodb database using
  * the mongoose library.
  */
-mongoose.connect(
-  config.mongodb.uri,
-  { useNewUrlParser: true }
-);
+mongoose.connect(config.mongodb.uri, { useNewUrlParser: true });
 
 /**
  * Declare the schema which the will hold our
  * GraphQL types and resolvers.
  */
 const schema = makeExecutableSchema({
-  typeDefs: [rootTypeDefs, userTypeDefs, workspaceTypeDefs, petTypeDefs],
-  resolvers: merge(userResolvers, workspaceResolvers, petResolvers),
+  typeDefs: [
+    rootTypeDefs,
+    userTypeDefs,
+    workspaceTypeDefs,
+    petTypeDefs,
+    livroTypeDefs,
+  ],
+  resolvers: merge(
+    userResolvers,
+    workspaceResolvers,
+    petResolvers,
+    livroResolvers
+  ),
 });
 
 /**

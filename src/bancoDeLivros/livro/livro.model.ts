@@ -1,25 +1,24 @@
-import { mongoose } from 'mongoose';
-import { GraphQLDate, GraphQLTime, GraphQLDateTime } from 'graphql-iso-date';
+import mongoose from 'mongoose';
 
 const livroSchema = new mongoose.Schema({
-  nome: {
+  titulo: {
     type: String,
     required: true,
   },
   numeroDeSerie: {
-    type: Int32Array,
+    type: Number,
     required: true,
   },
   precoSugerido: {
-    type: Float32Array,
+    type: Number,
     required: true,
   },
   dataDePublicacao: {
-    type: GraphQLDate,
+    type: String,
     required: true,
   },
   edicao: {
-    type: Int32Array,
+    type: Number,
   },
   idioma: {
     type: String,

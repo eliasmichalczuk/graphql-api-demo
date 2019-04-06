@@ -21,3 +21,30 @@ bookDB
     edicao
     idioma
     tema
+
+
+Query and mutation examples
+query livros {
+  livros(filter: {limit: 20}) {
+    id,
+    titulo,
+    numeroDeSerie,
+    precoSugerido,
+    dataDePublicacao
+  }
+}
+
+mutation addLivro {
+  addLivro(input: {
+    titulo: "menino maluquinho",
+        numeroDeSerie: 1,
+    precoSugerido: 40,
+    dataDePublicacao: "25/03/2019",
+    
+  }) {
+    titulo,
+    numeroDeSerie,
+    precoSugerido,
+    dataDePublicacao
+  }
+}
