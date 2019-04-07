@@ -48,3 +48,15 @@ mutation addLivro {
     dataDePublicacao
   }
 }
+
+
+query autores {
+  autores(filter: { limit: 12 }) {
+    nome,
+    sobrenome,
+    dataNascimento,
+  	obras {
+      titulo
+    }
+  }
+}

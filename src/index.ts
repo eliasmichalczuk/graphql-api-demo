@@ -16,6 +16,10 @@ import {
   livroTypeDefs,
   livroResolvers,
 } from './bancoDeLivros/livro/livro.schema';
+import {
+  autorTypeDefs,
+  autorResolvers,
+} from './bancoDeLivros/autor/autor.schema';
 
 /**
  * Connect to the mongodb database using
@@ -34,12 +38,14 @@ const schema = makeExecutableSchema({
     workspaceTypeDefs,
     petTypeDefs,
     livroTypeDefs,
+    autorTypeDefs,
   ],
   resolvers: merge(
     userResolvers,
     workspaceResolvers,
     petResolvers,
-    livroResolvers
+    livroResolvers,
+    autorResolvers
   ),
 });
 
