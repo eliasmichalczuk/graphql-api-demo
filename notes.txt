@@ -12,9 +12,9 @@ bookDB
     nome
     sobrenome
     data nascimento
-    livros
+    obras
   livro
-    nome
+    titulo
     numero de serie
     preço sugerido
     data de publicacao
@@ -60,3 +60,16 @@ query autores {
     }
   }
 }
+
+Using fetch to make a request 
+fetch("http://localhost:4000/", {
+		method: 'POST',
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify({
+			query: "autores { autores(filter: { limit: 12 }) {nome,sobrenome,dataNascimento,obras {titulo}}}"
+		}),
+	})
+	.then(res => res.json())
+	.then(res => console.log(res.data));
