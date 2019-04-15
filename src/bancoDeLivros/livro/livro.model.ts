@@ -5,6 +5,9 @@ const livroSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  autorId: {
+    type: Number,
+  },
   numeroDeSerie: {
     type: Number,
     required: true,
